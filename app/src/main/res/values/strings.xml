@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">WednesdayApp</string>
+    <string name="frog_photo">This is frogs photo</string>
+    <string name="loading">loading</string>
 </resources>
