@@ -1,5 +1,6 @@
 package com.example.wednesdayapp.ui.screens
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -75,8 +76,10 @@ fun FrogCard(frog: FrogsData, modifier: Modifier = Modifier) {
                 style = MaterialTheme.typography.labelMedium
             )
             AsyncImage(
-                model = ImageRequest.Builder(context = LocalContext.current).data(frog.imgSrc)
-                    .crossfade(true).build(),
+                model = ImageRequest.Builder(LocalContext.current)
+                    .data(frog.imgSrc)
+                    .crossfade(true)
+                    .build(),
                 error = painterResource(R.drawable.ic_broken_image),
                 placeholder = painterResource(R.drawable.loading_img),
                 contentDescription = stringResource(R.string.frog_photo),
@@ -97,11 +100,13 @@ fun FrogsColumn(
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(0.dp)
 ) {
+    Log.d("MainScreen", "It's Frogs Column")
     LazyColumn(
         contentPadding = contentPadding,
         modifier = modifier,
     ) {
         items(items = frogs, key = { frog -> frog.name }) { frog ->
+            Log.d("MainScreen", "${frog.imgSrc}")
             FrogCard(
                 frog = frog,
                 modifier = Modifier
@@ -116,6 +121,8 @@ fun FrogsColumn(
 @Composable
 fun PreviewSuccessScreen() {
     AppTheme {
+        val mockData = List(5) { FrogsData("Great Basin Spadefoot", "", "", "") }
+
 
     }
 }

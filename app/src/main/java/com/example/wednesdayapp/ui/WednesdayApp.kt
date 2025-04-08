@@ -29,7 +29,8 @@ fun WednesdayApp() {
         Surface(
             modifier = Modifier.fillMaxSize()
         ) {
-            val wednesdayViewModel: WednesdayViewModel = viewModel()
+            val wednesdayViewModel: WednesdayViewModel =
+                viewModel(factory = WednesdayViewModel.Factory)
             MainScreen(
                 uiState = wednesdayViewModel.uiState,
                 contentPadding = it

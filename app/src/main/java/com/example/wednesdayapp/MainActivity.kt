@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import com.example.wednesdayapp.ui.WednesdayApp
 import com.example.wednesdayapp.ui.theme.AppTheme
 
 
@@ -15,7 +16,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AppTheme {
-
+                WednesdayApp()
             }
         }
     }
