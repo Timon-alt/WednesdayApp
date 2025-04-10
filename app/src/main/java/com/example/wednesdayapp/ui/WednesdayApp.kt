@@ -33,6 +33,7 @@ fun WednesdayApp() {
                 viewModel(factory = WednesdayViewModel.Factory)
             MainScreen(
                 uiState = wednesdayViewModel.uiState,
+                onRetry = wednesdayViewModel::getFrogsData,
                 contentPadding = it
             )
         }
@@ -45,10 +46,15 @@ fun WednesdayApp() {
 fun WednesdayAppBar(scrollBehavior: TopAppBarScrollBehavior, modifier: Modifier = Modifier) {
     CenterAlignedTopAppBar(
         scrollBehavior = scrollBehavior,
+        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer,
+            titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer
+        ),
         title = {
             Text(
                 text = stringResource(R.string.app_name),
-                style = MaterialTheme.typography.headlineMedium
+                style = MaterialTheme.typography.headlineMedium,
+
             )
         },
         modifier = modifier

@@ -2,4 +2,6 @@
     <string name="app_name">WednesdayApp</string>
     <string name="frog_photo">This is frogs photo</string>
     <string name="loading">loading</string>
+    <string name="connection_error">connection error</string>
+    <string name="button_text">Retry</string>
 </resources>
